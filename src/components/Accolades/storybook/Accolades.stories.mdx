@@ -1,0 +1,31 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentAccolades from 'components/Accolades/Accolades';
+import * as stories from 'components/Accolades/storybook/Accolades.stories.tsx';
+
+<Meta
+  title="Components/Accolades"
+  component={ComponentAccolades}
+  argTypes={{
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the eyebrow',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+  }}
+/>
+
+# Accolades Component
+
+The Accolades Component highlights the awards that Freshworks has received.
+
+<Canvas>
+  <Story name="Accolades" story={stories.componentAccolades} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Accolades" />

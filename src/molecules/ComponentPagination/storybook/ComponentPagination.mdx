@@ -1,0 +1,50 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentPagination from 'molecules/ComponentPagination/ComponentPagination';
+import * as stories from 'molecules/ComponentPagination/storybook/ComponentPagination.stories.tsx';
+
+<Meta
+  title="Molecules/Component Pagination"
+  component={ComponentPagination}
+  argTypes={{
+    isWithArrow: {
+      control: { type: 'boolean' },
+      description: 'Hide and show arrows.',
+    },
+    variant: {
+      control: { type: 'radio' },
+      options: ['light', 'dark'],
+      description: 'Toggle between light and dark variant.',
+    },
+    activeDot: {
+      control: { type: 'number' },
+      description: 'The current active dot.',
+    },
+    dotsCount: {
+      control: { type: 'number' },
+      description: 'The number of dots to generate.',
+    },
+    onSetActiveDot: {
+      action: 'setActiveDot',
+      description: 'Callback to set active dot.',
+    },
+    onLeftArrowClick: {
+      action: 'LeftArrowClick',
+      description: 'Callback fired when left arrow is clicked.',
+    },
+    onRightArrowClick: {
+      action: 'RightArrowClick',
+      description: 'Callback fired when right arrow clicked.',
+    },
+  }}
+/>
+
+# Component Pagination
+
+<Canvas>
+  <Story name="Component Pagination" story={stories.ComponentPaginationStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Component Pagination" />

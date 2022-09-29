@@ -1,0 +1,116 @@
+{
+  "name": "freshworks",
+  "description": "Freshworks Marketing Site",
+  "version": "1.0.0",
+  "license": "UNLICENSED",
+  "author": {
+    "name": "Freshworks",
+    "url": "https://www.freshworks.com/"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "lint": "eslint \"src/**/*.{js,jsx,ts,tsx,mdx}\" --fix",
+    "format": "prettier --write  --loglevel silent \"src/**/*.{js,jsx,ts,tsx,mdx}\"",
+    "prettier-watch": "onchange \"**/*\" -- prettier --write --ignore-unknown {{changed}}",
+    "check-types": "tsc --noEmit",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "chromatic": "npx chromatic",
+    "create-types": "DOTENV_CONFIG_PATH=.env graphql-codegen -r dotenv/config",
+    "graphiql": "DOTENV_CONFIG_PATH=.env node -r dotenv/config graphiql.js"
+  },
+  "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
+    "@contentful/rich-text-types": "^15.12.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mui/icons-material": "^5.6.2",
+    "@mui/material": "^5.6.2",
+    "final-form": "^4.20.7",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "next": "^12.1.6",
+    "next-translate": "^1.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.3.2",
+    "react-feather": "^2.0.10",
+    "react-final-form": "^6.5.9",
+    "react-is": "^17.0.0",
+    "react-use": "^17.4.0",
+    "sharp": "^0.31.0",
+    "styled-components": "^5.3.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@graphql-codegen/cli": "^2.7.0",
+    "@graphql-codegen/typescript": "^2.5.1",
+    "@graphql-codegen/typescript-graphql-request": "^4.4.11",
+    "@graphql-codegen/typescript-operations": "^2.4.2",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addons": "^6.5.10",
+    "@storybook/api": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/components": "^6.5.10",
+    "@storybook/core-events": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.10",
+    "@storybook/theming": "6.5.10",
+    "@svgr/webpack": "^5.0.0",
+    "@types/material-ui": "^0.21.8",
+    "@types/node": "^12.0.0",
+    "@types/react": "^18.0.0",
+    "@types/react-dom": "^18.0.6",
+    "@types/styled-components": "^5.1.24",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-styled-components": "^2.0.6",
+    "chromatic": "^6.7.0",
+    "eslint": "^7.11.0",
+    "eslint-config-next": "^12.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-absolute-only": "^1.0.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-mdx": "^1.17.0",
+    "eslint-plugin-no-inline-styles": "^1.0.5",
+    "eslint-plugin-prefer-arrow": "^1.2.3",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "husky": "^4.0.0",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.3.2",
+    "storybook-addon-next": "^1.6.9",
+    "storybook-dark-mode": "^1.1.0",
+    "typescript": "^4.0.3",
+    "url-loader": "^4.1.1",
+    "webpack": "5.70.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mdx}": [
+      "eslint --fix",
+      "prettier --write --loglevel silent"
+    ]
+  }
+}

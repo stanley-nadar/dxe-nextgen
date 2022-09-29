@@ -1,0 +1,80 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import SignUpForm from 'components/Forms/SignUpForm/SignUpForm';
+import * as stories from 'components/Forms/SignUpForm/storybook/SignUpForm.stories.tsx';
+
+<Meta
+  title="Components/Signup Form"
+  component={SignUpForm}
+  argTypes={{
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+  }}
+/>
+
+# Signup Form
+
+Note to User: Fields are disabled on storybook to prevent junk data being sent to Aloha API.
+
+The Signup Form is mainly a pre-filled out form but it still gives Content Editors flexibility in regards to few details
+
+The First & Last Name, Email, Company, and Phone Number field all reference the Form: Input Field Content Model. What
+comes pre-configured is the identification and type. The Content Editor has the freedom to customize the label, Start
+Icon, End Icon, and Tooltip Title and Description if necessary. See details below.
+
+### Input Field
+
+This is in reference to the Form: Input Field Content Model inside Contentful.
+
+The `Label` field captions the Input Field. Necessary for screen readers.
+
+The `Placeholder` field specifies a hint that describes the expected value, it is recommended to always include this to
+boosten user experience.
+
+The `Helper Text` field defines text located under the Input Field to assist the user with the TextField functionality.
+
+The `Start Icon` field defines the icon to be used at the start of the TextField. Visit Components -> Input Field to see
+it in action.
+
+The `End Icon` field defines the icon to be used at the end of the TextField. Visit Components -> Input Field to see it
+in action.
+
+The `Tool Tip Title` and `Tool Tip Description` only function when the Help End Icon is selected. They both appear if
+the user hovers over the Help End Icon. Visit Components -> Input Field to see it in action.
+
+### Hidden Forms
+
+This Contentful field allows the content editor to throw in invisible input fields in order to capture additional data
+when a form gets submitted. The Form: Input Field gets referenced here.
+
+The `Identification` field is what determines the name of the key that gets paired with the content editor provided
+`Value` sent to the Freshmarketer.
+
+The `Value` field can be any string that the Content Editor provides.
+
+### Heading
+
+Copy for the heading
+
+### Terms of Service
+
+Links the user to the Term of Service page. Only URLs will be accepted.
+
+### Privacy Notice
+
+Links the user to the Privacy Notice page. Only URLs will be accepted.
+
+### Page Redirection
+
+Upon successful form submission, direct a user to a different page. Typically directs users to a Thank You page. Only
+Urls will be accepted.
+
+<Canvas>
+  <Story name="Signup Form" story={stories.componentSignUpForm} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Signup Form" />

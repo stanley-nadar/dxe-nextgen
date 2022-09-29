@@ -1,0 +1,38 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentHeader from 'components/Header/Header';
+import * as stories from 'components/Header/storybook/Header.stories.tsx';
+
+<Meta
+  title="Components/Header"
+  component={ComponentHeader}
+  argTypes={{
+    headerStyle: {
+      options: ['Global Nav', 'Minimal'],
+      control: { type: 'select' },
+      description: 'Determine the Style of Nav',
+    },
+  }}
+/>
+
+# Header Component
+
+The navigation is the topmost part of a web page that helps the user navigate a site. Use at the top of every page on
+the website unless there is a special circumstance.
+
+The Global Navigation contains a skip to main content button, this allows keyboard users to jump to the main content of
+the page.
+
+### Header Style
+
+This control is seen inside the Template: Page content model. This allows the user to configure the Header to utilize a
+dark background or minimal version of it. Due to Storybook's functionality, the only control that is provided is the
+toggle between minimal and global nav for the time being.
+
+<Canvas>
+  <Story name="Header" story={stories.componentHeader} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Header" />

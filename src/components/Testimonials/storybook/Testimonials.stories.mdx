@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Testimonials from 'components/Testimonials/Testimonials';
+import * as stories from 'components/Testimonials/storybook/Testimonials.stories.tsx';
+
+<Meta
+  title="Components/Testimonials"
+  component={Testimonials}
+  argTypes={{
+    contained: {
+      control: { type: 'boolean' },
+      description: 'If true, the card will use its inherent background color and become contained',
+    },
+    background: {
+      control: { type: 'select' },
+      options: ['Primary Green-400', 'Primary Blue-300', 'Lime Green-400', 'Light Blue-200', 'Red-200', undefined],
+      description: '',
+    },
+  }}
+/>
+
+# Testimonials
+
+A dual variant (contained and uncontained) slider for testimonials.
+
+The contained version features testimnial cards with varying background colors and a heading.
+
+The uncontained version has a fixed section background color and the text and image slide. If a background color is
+selected, the Testimonials component will default to contained.
+
+<Canvas>
+  <Story name="Testimonials" story={stories.TestimonialsStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Testimonials" />

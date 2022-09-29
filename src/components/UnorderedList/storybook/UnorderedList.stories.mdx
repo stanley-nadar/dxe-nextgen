@@ -1,0 +1,19 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import UnorderedList from 'components/UnorderedList/UnorderedList';
+import * as stories from 'components/UnorderedList/storybook/UnorderedList.stories.tsx';
+
+<Meta title="Components/Unordered List" component={UnorderedList} argTypes={{}} />
+
+# Unordered List
+
+The Unordered list component takes in references of List Items and returns the list items in an unordered list and with
+proper markup.
+
+<Canvas>
+  <Story name="Unordered List" story={stories.UnorderedListStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Unordered List" />

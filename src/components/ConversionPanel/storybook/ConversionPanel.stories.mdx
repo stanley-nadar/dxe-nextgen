@@ -1,0 +1,36 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ConversionPanel from 'components/ConversionPanel/ConversionPanel';
+import * as stories from 'components/ConversionPanel/storybook/ConversionPanel.stories.tsx';
+
+<Meta
+  title="Components/Conversion Panel"
+  component={ConversionPanel}
+  argTypes={{
+    contained: {
+      control: { type: 'boolean' },
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+  }}
+/>
+
+# ConversionPanel
+
+The Conversion Panel guides users toward your goal conversion by leading them to purchase or schedule a demo.
+
+The Conversion Panel contains a `Heading`, `Eyebrow`, and a rich text field.
+
+<Canvas>
+  <Story name="Conversion Panel" story={stories.ConversionPanelStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Conversion Panel" />

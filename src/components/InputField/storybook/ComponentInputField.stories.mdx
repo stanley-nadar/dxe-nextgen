@@ -1,0 +1,27 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentInputField from 'components/InputField/ComponentInputField';
+import * as stories from 'components/InputField/storybook/ComponentInputField.stories.tsx';
+
+<Meta
+  title="Components/Input Field"
+  component={ComponentInputField}
+  argTypes={{
+    inputField: {
+      control: { type: 'object' },
+      description: 'Imported Input Field Component',
+    },
+  }}
+/>
+
+# Input Field Component
+
+This Component is used inside existing components. The Input Field is typically rendered through Rich Text.
+
+<Canvas>
+  <Story name="Input Field" story={stories.componentInputField} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Input Field" />

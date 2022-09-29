@@ -1,0 +1,20 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import CaseStudies from 'components/CaseStudies/CaseStudies';
+import * as stories from 'components/CaseStudies/storybook/CaseStudies.stories.tsx';
+
+<Meta title="Components/Case Studies" component={CaseStudies} argTypes={{}} />
+
+# Case Studies
+
+The Case Studies component consists of heading component along with a collection of Case Study Cards.
+
+Cards increase in size when they come into view.
+
+<Canvas>
+  <Story name="Case Studies" story={stories.componentCaseStudies} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Case Studies" />

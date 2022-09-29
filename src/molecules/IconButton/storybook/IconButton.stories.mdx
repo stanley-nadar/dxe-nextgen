@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import IconButton from 'molecules/IconButton/IconButton';
+import * as stories from 'molecules/IconButton/storybook/IconButton.stories.tsx';
+
+import { iconMap } from 'utils/storyUtils.stories.tsx';
+
+<Meta
+  title="Molecules/Icon Button"
+  component={IconButton}
+  argTypes={{
+    children: {
+      options: Object.keys(iconMap),
+      mapping: iconMap,
+      description: 'The icon to display',
+      control: { type: 'select' },
+    },
+    onKeyDown: {
+      action: 'onKeyDown',
+      description: 'Callback function fired on Keyboard onKeyDown event.',
+    },
+    onClick: {
+      action: 'onClick',
+      description: 'Callback function fired on Mouse onClick event.',
+    },
+  }}
+/>
+
+# Progress Indicator
+
+<Canvas>
+  <Story name="Icon Button" story={stories.IconButtonStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Icon Button" />

@@ -1,0 +1,24 @@
+schema:
+  - ? https://graphql.contentful.com/content/v1/spaces/${CONTENTFUL_SPACE_ID}/environments/${CONTENTFUL_ENV}
+    : headers:
+        Authorization: "Bearer ${CONTENTFUL_PREVIEW_ACCESS_TOKEN}"
+documents:
+  - ./src/**/*.graphql
+generates:
+  src/graphql/types.ts:
+    plugins:
+      - typescript:
+          typesPrefix: I
+          disableDescriptions: true
+      - typescript-operations:
+          globalNamespace: true
+    config:
+      declarationKind: "interface"
+      inlineFragmentTypes: "combine"
+  src/graphql/sdk.ts:
+    plugins:
+      - typescript-graphql-request
+hooks:
+  afterAllFileWrite:
+    - prettier --write
+    - eslint --fix

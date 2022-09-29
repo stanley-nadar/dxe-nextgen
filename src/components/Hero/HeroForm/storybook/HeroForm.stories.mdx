@@ -1,0 +1,71 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentHeroForm from 'components/Hero/HeroForm/HeroForm';
+import * as stories from 'components/Hero/HeroForm/storybook/HeroForm.stories.tsx';
+
+<Meta
+  title="Components/Hero Form"
+  component={ComponentHeroForm}
+  argTypes={{
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the eyebrow',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the headings',
+    },
+    subheading: {
+      control: { type: 'text' },
+      description: 'Copy for the subheading',
+    },
+    contentBackground: {
+      options: ['Light Blue-50', 'Red-50', 'Lime Green-50'],
+      control: { type: 'select' },
+      description: 'Choose your background',
+    },
+  }}
+/>
+
+# Hero Form Component
+
+The Hero is the first thing users see when arriving on a Freshworks website. This variant prioritizes the usage of a
+form.
+
+The storybook has a few words in camel case format due to a translation package. This will not appear in the live build.
+
+### Media reference
+
+The Content Editor can reference a static image, the `Video Component`, `Accolades Component`, or the
+`Testimonial Component.`
+
+### Background
+
+For Mobile and Tablet, the background covers the entire section. Where Desktop covers The Copy and Media Reference.
+Content editors select a background from the dropdown menu.
+
+### Hero Feature List
+
+References the Component: List, which takes in references of List Items with proper markup.
+
+Inside List Items, the content editor can select whether he or she wants a symbol next to the list title.
+
+### Eyebrow
+
+Copy for the eyebrow
+
+### Heading
+
+Copy for the heading
+
+### Subheading
+
+Copy for the subheading
+
+<Canvas>
+  <Story name="Hero Form" story={stories.componentHeroForm} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Hero Form" />

@@ -1,0 +1,77 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import { colorMap } from 'molecules/Chip/Chip';
+
+import BasicCard, { sizeMap } from 'components/Cards/BasicCard/BasicCard';
+import * as stories from 'components/Cards/BasicCard/storybook/BasicCard.stories.tsx';
+
+<Meta
+  title="Components/Cards/Basic Card"
+  component={BasicCard}
+  argTypes={{
+    size: {
+      options: Object.keys(sizeMap),
+      control: { type: 'select' },
+    },
+    variant: {
+      options: ['standard', 'overlay', 'longHeading'],
+      control: { type: 'select' },
+    },
+    body: {
+      control: { type: 'text' },
+    },
+    category: {
+      control: { type: 'text' },
+    },
+    categoryColor: {
+      options: Object.keys(colorMap),
+      control: { type: 'select' },
+    },
+    heading: {
+      control: { type: 'text' },
+    },
+    link: {
+      control: { type: 'text' },
+    },
+    longHeading: {
+      control: { type: 'text' },
+    },
+    date: {
+      control: { type: 'none' },
+    },
+    media: {
+      control: { type: 'none' },
+    },
+  }}
+/>
+
+# Basic Card
+
+The Basic Card component comes in three main variants. They are the `standard`, `overlay`, and `longHeading` variants.
+Each variant is visually unique and some even have unique attributes.
+
+### Standard
+
+The `standard` variant is the default variant that shows the `media` on the top and `category`, `heading`, and `body`
+below. The `heading` is limited to 45 charactors and the body is truncated at two lines.
+
+### Overlay
+
+The `overlay` variant shows the `media` in full height with a slight black gradient on the bottom for readablity. It
+also shows the `category` and `heading` but doesnt show the body until it had been hovered over. The body is NOT
+truncated in this variation.
+
+### Long Heading
+
+the `longHeading` variation (aka the description card) is the most unique. It will NOT display the `heading` or the
+`body` fields, but will instead display the `longHeading` & `date` fields. When in all sizes excpet `xxl`, `longHeading`
+is truncated at three lines. When in `xxl` size, the long heading will be to the right of the media and be a max of 350
+charactors.
+
+<Canvas>
+  <Story name="Basic Card" story={stories.BasicCardStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Basic Card" />

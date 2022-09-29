@@ -1,0 +1,88 @@
+import { Meta } from '@storybook/addon-docs';
+
+import Flex from 'quarks/Flex';
+
+<Meta
+  title="Guides/Using Storybook"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Using this Storybook
+
+This Storybook hosts live demos of all molecules and components, guides and documentation, and other tools for
+understanding the contents of the Freshworks UI Library.
+
+## Viewing Stories
+
+Each Quark, Atom, Molecule, and Component has its own story, which consists of two tabs found in the top left:
+
+<Flex justifyContent="center">
+  <img src="./screenshots/toolbar.png" alt="Storybook Toolbar" title="Storybook Toolbar" />
+</Flex>
+
+### Canvas tab
+
+The Canvas tab demonstrates the item as it would be on a webpage. It is not present on guides like this one.
+
+In addition to responding to user input and screen size changes, the item in the Canvas tab offers a panel at the bottom
+if applicable. The panel comes in two parts:
+
+- **Controls:** These allow you to see how the item changes depending on the props provided to it. For simple props like
+  strings and numbers you can enter in the values directly. For more complex props like objects and arrays, a dropdown
+  is provided with keys that map to different preset values. To reset the controls, simply click the "undo" button in
+  the top right of the panel.
+
+<Flex justifyContent="center">
+  <img src="./screenshots/controls.png" alt="Canvas Controls" title="Canvas Controls" />
+</Flex>
+
+- **Actions:** For interactive elements such as buttons and input molecules that trigger events, those events will be
+  logged in the Actions tab.
+
+<Flex justifyContent="center">
+  <img src="./screenshots/actions.gif" alt="Canvas Actions" title="Canvas Actions" />
+</Flex>
+
+### Docs tab
+
+The Docs tab contains detailed explanations of item properties, requirements, and behavior that are not readily apparent
+in the Canvas tab. You are looking at a Doc tab right now!
+
+When applicable, stories also contain a "Props" table which includes descriptions of all props and their default values
+if set.
+
+<Flex justifyContent="center">
+  <img src="./screenshots/propsTable.png" alt="Prop Table" title="Prop Table" />
+</Flex>
+
+## The Toolbar
+
+Alongside the Canvas and Docs tabs are several Storybook controls. They offer convenient features for understanding each
+story:
+
+### Light and Dark Toggle
+
+This Storybook uses the [Dark Mode addon](https://storybook.js.org/addons/storybook-dark-mode), which provides a toggle
+on the far right of the toolbar. Although normally this toggle would affect both Storybook's UI itself and the canvas
+tab, it has been disabled in the canvas tab on this project since components are not designed with dark mode in mind.
+
+<Flex justifyContent="center">
+  <img src="./screenshots/darkMode.gif" alt="Dark Mode" title="Dark Mode" />
+</Flex>
+
+### Other Toolbar controls
+
+From left to right, other useful controls include:
+
+- Zoom in
+- Zoom out
+- Zoom reset
+- Toggle grid background
+- Responsiveness - This allows you to choose the screen size within the Canvas tab
+- Measure - This enables an overlay which shows sizes and distances between each element
+- Outlines - Enables a wireframe to show item positioning

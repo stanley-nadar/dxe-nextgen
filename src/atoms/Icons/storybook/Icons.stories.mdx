@@ -1,0 +1,89 @@
+import { ArgsTable, Meta, Story } from '@storybook/addon-docs';
+
+import StoryIcons from 'atoms/Icons/storybook/Icons';
+import { Icons } from 'atoms/Icons/storybook/Icons.stories.tsx';
+
+<Meta
+  title="Atoms/Icons"
+  component={StoryIcons}
+  argTypes={{
+    strokeWidth: {
+      control: { type: 'number' },
+    },
+    fill: {
+      control: { type: 'text' },
+    },
+  }}
+/>
+
+# Icons
+
+This UI Library uses Feather Icons as its base, which has a total of 287 different icons. A
+[complete searchable list](https://feathericons.com/) of all feather icons can be found within Feather documentation. As
+well, The UI Library allows custom icons to be rendered through using SVG Sprites.
+
+## Usage
+
+## Base Icons
+
+Base Icons are imported from React Feather. For example:
+
+```tsx
+import { Coffee } from 'react-feather';
+
+<Container>
+  <Coffee />
+</Container>;
+```
+
+You can also pass these icons into any prop which accepts a `ReactNode`:
+
+```tsx
+import { Coffee } from 'react-feather';
+
+const CoffeeButton = () => <Button endIcon={<Coffee />}>Click here for coffee!</Button>;
+```
+
+### Color
+
+Each feather icon will inherit the `textColor` of its parent element and doing so is recommended in order to take
+advantage of theme colors from quarks. However, feather icons can take a color prop that accepts any valid CSS color
+arguments.
+
+## Props
+
+The props allow you to customize the icon you're displaying, including its `color`, `fill`, `width`, `height`, `stroke`,
+`title`, and [many more](https://developer.mozilla.org/en-US/docs/Web/SVG/Attribute).
+
+```tsx
+import { Coffee } from 'react-feather';
+
+<Container textColor="primary-800">
+  <Coffee stroke="#FFF" width={40} strokeWidth={2} title="Coffee Icon" />
+</Container>;
+```
+
+## Freshwork Icons
+
+Freshwork Icons are rendered by the Icon Molecule. The Icon Molecule has two required Props: `id` and `size` For
+example:
+
+```tsx
+import Icon from 'molecules/Icon/icon';
+
+<Container>
+  <Icon id="automation" size={40} />
+</Container>;
+```
+
+You can also pass these icons into any prop which accepts a `ReactNode`:
+
+```tsx
+import Icon from 'molecules/Icon/icon';
+
+const RobotButton = () => <Button endIcon={<Icon id="automation" size={40} />}>I am Robot!</Button>;
+```
+
+<Story name="Icons" story={Icons} />
+
+<ArgsTable story="Icons" />

@@ -1,0 +1,47 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import TestimonialRichText from 'components/RichText/TestimonialRichText';
+import * as stories from 'components/RichText/storybook/TestimonialRichText.stories';
+
+<Meta
+  title="Components/Rich Text/Testimonial Rich Text"
+  component={TestimonialRichText}
+  argTypes={{
+    person: {
+      control: { type: 'object' },
+      description: 'Utilize the Entity: Person content model in order to import relevant data.',
+    },
+    quote: {
+      control: { type: 'object' },
+      description:
+        'Quote is based off Rich Text, which allows the user to bold, italicize or hyperlink certain excerpts.',
+    },
+  }}
+/>
+
+# Testimonial Rich Text Component
+
+This is the Rich Text Version of the `Testimonials Component`. Utilize the Testimonial Card Content Model when inputting
+this into Rich Text.
+
+The width of the Component is dependent upon the parent element's width. See the Sign-Up-Form as a reference.
+
+## Person
+
+Comes from the Content Model: Entity Person, the full name and role field are required for full functionality
+
+## Quote
+
+Uses Rich Text, this allows for the user to bolden, italicize or hyperlink certain excerpts.
+
+## Image
+
+The image is forced to be set to have a height and width of 80px.
+
+<Canvas>
+  <Story name="Testimonial Rich Text" story={stories.componentTestimonialRichText} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Testimonial Rich Text" />

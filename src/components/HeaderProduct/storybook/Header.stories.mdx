@@ -1,0 +1,19 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentHeaderProduct from 'components/HeaderProduct/Header';
+import * as stories from 'components/HeaderProduct/storybook/Header.stories.tsx';
+
+<Meta title="Components/Product Nav" component={ComponentHeaderProduct} argTypes={{}} />
+
+# Product Nav Component
+
+The navigation is the topmost part of a web page that helps the user navigate a site. Use at the top of every page on
+the website unless there is a special circumstance.
+
+<Canvas>
+  <Story name="Product Nav" story={stories.componentHeaderProduct} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Product Nav" />

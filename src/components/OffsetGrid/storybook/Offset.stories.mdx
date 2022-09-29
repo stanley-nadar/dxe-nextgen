@@ -1,0 +1,35 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentOffsetGrid from 'components/OffsetGrid/OffsetGrid';
+import * as stories from 'components/OffsetGrid/storybook/OffsetGrid.stories.tsx';
+
+<Meta
+  title="Components/Offset Grid Component"
+  component={ComponentOffsetGrid}
+  argTypes={{
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the Kicker',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the Heading',
+    },
+  }}
+/>
+
+# Offset Grid Component
+
+The Offset Grid Component will be used to link to Freshworks pages. It contains a `eyebrow`, `heading`, a set of cards,
+and an image.
+
+Each Offset Card will contain a Heading, a brief description, and a link to its corresponding page. The heading has a
+max character limit of 45 and the description has a max character limit of 256.
+
+<Canvas>
+  <Story name="Offset Grid Component" story={stories.componentOffsetGrid} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Offset Grid Component" />

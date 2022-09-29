@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentAccordion from 'components/Accordion/Accordion';
+import * as stories from 'components/Accordion/storybook/Accordion.stories.tsx';
+
+<Meta
+  title="Components/Accordion Component"
+  component={ComponentAccordion}
+  argTypes={{
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the eyebrow',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the headings',
+    },
+    variant: {
+      options: ['Left Heading Single', 'Left Heading Double', 'Center Heading Single', 'Center Heading Double'],
+      control: { type: 'select' },
+      description: 'Control the Accordion Layout',
+    },
+  }}
+/>
+
+# Accordion Component
+
+This component allows the user to navigate different tabs, which then allows users to toggle between showing or hiding
+content.
+
+<Canvas>
+  <Story name="Accordion Component" story={stories.componentAccordion} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Accordion Component" />

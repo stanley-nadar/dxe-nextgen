@@ -1,0 +1,33 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import CardDeck from 'components/CardDeck/CardDeck';
+import * as stories from 'components/CardDeck/storybook/CardDeck.stories.tsx';
+
+<Meta
+  title="Components/Card Deck"
+  component={CardDeck}
+  argTypes={{
+    headingDirection: {
+      options: ['Column', 'Row'],
+      control: { type: 'select' },
+      description: 'Moves alignment of Heading',
+    },
+    centerHeadingContent: {
+      control: { type: 'boolean' },
+      description: 'Controls alignment of Heading, only functional when headingDirection is set to Row',
+    },
+  }}
+/>
+
+# Card Deck Component
+
+Cards provide simple yet rich information that guides a user to click and continue to a new page. Use cards to provide
+links to other pages.
+
+<Canvas>
+  <Story name="Card Deck" story={stories.componentCardDeck} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Card Deck" />

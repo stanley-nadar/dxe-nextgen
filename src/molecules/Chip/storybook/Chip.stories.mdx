@@ -1,0 +1,18 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Chip from 'molecules/Chip/Chip';
+import * as stories from 'molecules/Chip/storybook/Chip.stories.tsx';
+
+<Meta title="Molecules/Chip" component={Chip} argTypes={{}} />
+
+# Chip
+
+Displays text in a small 'chip' of color. Has seven preset color variations.
+
+<Canvas>
+  <Story name="Chip" story={stories.ChipStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Chip" />

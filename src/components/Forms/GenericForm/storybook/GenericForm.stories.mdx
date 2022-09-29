@@ -1,0 +1,103 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import GenericForm from 'components/Forms/GenericForm/GenericForm';
+import * as stories from 'components/Forms/GenericForm/storybook/GenericForm.stories.tsx';
+
+<Meta
+  title="Components/Generic Form"
+  component={GenericForm}
+  argTypes={{
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+    subheading: {
+      control: { type: 'text' },
+      description: 'Copy for the Subheading',
+    },
+    bodyTextLabel: {
+      control: { type: 'text' },
+      description: 'When given a label, it enables the body text field.',
+    },
+  }}
+/>
+
+# Generic Form
+
+The Generic Form allows the Content Editor to generate a custom form and send any data over to the Freshmarketer
+Endpoint.
+
+## Forms
+
+This contentful field allows the content editor to reference either a Form: Dropdown field or a Form: Input field. The
+content editor can reference up to 10 Fields.
+
+### Input Field
+
+This is in reference to the Form: Input Field Content Model inside Contentful.
+
+The `Type` field determines what type of input should the user input. It's crucial for this to be accurate as it helps
+the user's experience. This is also tied to Validation.
+
+The `Label` field captions the Input Field. Necessary for screen readers.
+
+The `Placeholder` field specifies a hint that describes the expected value, it is recommended to always include this to
+boosten user experience.
+
+The `Helper Text` field defines text located under the Input Field to assist the user with the TextField functionality.
+
+The `Start Icon` field defines the icon to be used at the start of the TextField. Visit Components -> Input Field to see
+it in action.
+
+The `End Icon` field defines the icon to be used at the end of the TextField. Visit Components -> Input Field to see it
+in action.
+
+The `Tool Tip Title` and `Tool Tip Description` only function when the Help End Icon is selected. They both appear if
+the user hovers over the Help End Icon. Visit Components -> Input Field to see it in action.
+
+For the Generic Form, the `Identification` field is what determines the name of the key that gets paired with the user
+input value sent to the Freshmarketer.
+
+### Dropdown Field
+
+This is in reference to the Form: Dropdown Field Content Model inside Contentful.
+
+The `Label` field captions the Input Field. Necessary for screen readers.
+
+The `Placeholder` field specifies a hint that describes the expected value, it is recommended to always include this to
+boosten user experience.
+
+The `Options` is what determines what strings can go inside of a list.
+
+For the Generic Form, the `Identification` field is what determines the name of the key that gets paired with the user
+input value sent to the Freshmarketer.
+
+## Hidden Forms
+
+This Contentful field allows the content editor to throw in invisible input fields in order to capture additional data
+when a form gets submitted. The Form: Input Field gets referenced here.
+
+The `Identification` field is what determines the name of the key that gets paired with the content editor provided
+`Value` sent to the Freshmarketer.
+
+The `Value` field can be any string that the Content Editor provides.
+
+## Body Text Field
+
+When given a value on Contentful, it renders a body text field to the Generic Form
+
+## Heading
+
+Copy for the heading
+
+## Subheading
+
+Optional. Copy for the subheading.
+
+<Canvas>
+  <Story name="Generic Form" story={stories.componentGenericForm} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Generic Form" />

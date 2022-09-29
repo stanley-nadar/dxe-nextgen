@@ -1,0 +1,40 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Switchback from 'components/Switchback/Switchback';
+import * as stories from 'components/Switchback/storybook/Switchback.stories.tsx';
+
+<Meta
+  title="Components/Switchback Component"
+  component={Switchback}
+  argTypes={{
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the eyebrow',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+    assetSide: {
+      options: ['Left', 'Right'],
+      control: { type: 'select' },
+      description: 'Changes placement of the image',
+    },
+  }}
+/>
+
+# Switchback
+
+This Switchback Component is used to display copy and an image.
+
+## Asset Side
+
+Toggles image placement from left or right.
+
+<Canvas>
+  <Story name="Switchback Component" story={stories.switchback} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Switchback Component" />

@@ -1,0 +1,56 @@
+import { Meta } from '@storybook/addon-docs';
+
+<Meta
+  title="Guides/Get Started"
+  parameters={{
+    viewMode: 'docs',
+    previewTabs: {
+      canvas: { hidden: true },
+    },
+  }}
+/>
+
+# Welcome to the Freshworks UI Library!
+
+The Freshworks UI Library is based on the Webstacks UI Library template repository built to quickly jump start new
+React-based website projects.
+
+<br />
+
+## To start development
+
+Install all necessary dependencies. This project uses `yarn` as its package manager.
+
+```shell
+# run these commands in your cli
+yarn
+yarn start
+```
+
+The Storybook contains a set of useful guide docs, design system definitions, live demos, and documentation for all
+components included in the Freshworks UI Library.
+
+To run Storybook locally, simply run:
+
+```shell
+yarn storybook
+```
+
+## Features
+
+The Freshworks UI Library offers several features that make it easier to build new websites with. Full guides on them
+exist in the Storybook.
+
+1. **Atoms**: These are a code implementation of a design system. Values can be replaced easily and used across the
+   project via quarks.
+2. **Quarks**: These are essentially fully-featured [styled-components](https://styled-components.com/) that implement
+   atom values via React props.
+3. **Molecules**: These are small React components mostly built using [Material-UI](https://mui.com/) that give you a
+   head-start in building out your new site.
+4. **Linting**: Fully fleshed out [ESLint](https://eslint.org/) and [Prettier](https://prettier.io) rulesets are
+   included which run on each commit via [Husky](https://typicode.github.io/husky) and
+   [lint-staged](https://www.npmjs.com/package/lint-staged).
+5. **Documentation**: Every item in the UI Library is displayed on Storybook for easy demonstration for non-coders and
+   includes an explanation of functionality.
+6. **Type-safety**: The UI Library takes full advantage of Typescript and all types should be defined and used
+   correctly.

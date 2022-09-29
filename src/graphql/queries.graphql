@@ -1,0 +1,46 @@
+#import "./fragments.graphql"
+
+query TemplatePageAllSlugs {
+  templatePageCollection {
+    items {
+      sys {
+        id
+      }
+      slug
+    }
+  }
+}
+
+query TemplatePage1($slug: String, $locale: String) {
+  templatePageCollection(where: { slug: $slug }, locale: $locale, limit: 1) {
+    items {
+      ...templatePageMetaData
+      componentsCollection {
+        items {
+          ...templatePageComponents1
+        }
+      }
+    }
+  }
+  componentFooter(id: "1xrFKkB0Crq2SPtytBrgMA", locale: $locale) {
+    ...componentFooter
+  }
+}
+
+query TemplatePage2($slug: String, $locale: String) {
+  templatePageCollection(where: { slug: $slug }, locale: $locale, limit: 1) {
+    items {
+      componentsCollection {
+        items {
+          ...templatePageComponents2
+        }
+      }
+    }
+  }
+}
+
+query ComponentHeader($locale: String)  {
+   componentHeader(id: "NaKBZ9lFiAkLZzL2jQm45", locale: $locale) {
+    ...componentHeader
+  }
+}

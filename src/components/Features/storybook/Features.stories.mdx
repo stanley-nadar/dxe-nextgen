@@ -1,0 +1,42 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentFeatures from 'components/Features/Features';
+import * as stories from 'components/Features/storybook/Features.stories.tsx';
+
+<Meta
+  title="Components/Features"
+  component={ComponentFeatures}
+  argTypes={{
+    background: {
+      control: { type: 'select' },
+      options: ['White', 'Dark Gradient'],
+      description: 'Changes the background of the section',
+    },
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the eyebrow',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+    imageSide: {
+      control: { type: 'select' },
+      options: ['Left', 'Right'],
+      description: 'Changes placement of the image',
+    },
+  }}
+/>
+
+# Features Component
+
+The Features Component explains what the product or service does and how it can help. Use features sections where you
+want to give a short description and a few key features of the product or service you are offering.
+
+<Canvas>
+  <Story name="Features" story={stories.componentFeatures} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Features" />

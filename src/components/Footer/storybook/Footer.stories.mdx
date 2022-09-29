@@ -1,0 +1,77 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import Footer from 'components/Footer/Footer';
+import * as stories from 'components/Footer/storybook/Footer.stories.tsx';
+import { menuItemsCollection } from 'components/Footer/storybook/Footer.stories.tsx';
+
+export const menuMap = {
+  one: menuItemsCollection(1),
+  two: menuItemsCollection(2),
+  three: menuItemsCollection(3),
+  four: menuItemsCollection(4),
+};
+
+<Meta
+  title="Components/Footer"
+  component={Footer}
+  argTypes={{
+    footerStyle: {
+      options: ['Standard', 'Minimal', 'Standard Black', 'Minimal Black'],
+      control: { type: 'select' },
+    },
+    menuItemsCollection: {
+      options: Object.keys(menuMap),
+      mapping: menuMap,
+      control: { type: 'select' },
+    },
+  }}
+/>
+
+# Footer
+
+The standard footer component. There is an option to render it in black for a reserved page.
+
+## Fields
+
+#### Contact Number
+
+Takes any valid international number and renders it in the contact bar next to the Contact Email.
+
+#### Contact Email
+
+Takes any email address and renders it in the contact bar next to the Contact Number.
+
+#### Menu Items
+
+Takes references to the Menu Items content model. Renders out the Menu Items as navigable lists.
+
+#### Announcement Card
+
+An optional Menu Item reference that if present renders a card with an Image and its own CTA.
+
+#### Google Play URL & Apple Store URL
+
+Optional URL's that if present render a button to each of the URL's destinations. (Google url a Google Play button and
+Apple Store is an Apple Store button)
+
+#### Privacy & Terms Menu
+
+Takes a list of up to 7 menu items that are rendered at the bottom. These are typically your privacy information and
+legal text links.
+
+#### Company
+
+This is Freshworks. Since important company info can be referenced in multiple places, it is set into a content item of
+its own and referenced throughout the site. This is where the footer gets the information for the social navigation.
+
+#### Copyright
+
+Legal text at the bottom of the footer.
+
+<Canvas>
+  <Story name="Footer" story={stories.FooterStory} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Footer" />

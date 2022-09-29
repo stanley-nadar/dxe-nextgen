@@ -1,0 +1,16 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentSwitcher from 'components/Switcher/Switcher';
+import * as stories from 'components/Switcher/storybook/Switcher.stories.tsx';
+
+<Meta title="Components/Switcher" component={ComponentSwitcher} argTypes={{}} />
+
+# Switcher Component
+
+A Switcher component allows a user to use tabs to switch between content.
+
+<Canvas>
+  <Story name="Switcher" story={stories.componentSwitcher} />
+</Canvas>
+
+<ArgsTable story="Switcher" />

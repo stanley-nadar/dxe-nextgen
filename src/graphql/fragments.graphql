@@ -1,0 +1,854 @@
+fragment asset on Asset {
+  sys {
+    id
+  }
+  __typename
+  contentType
+  title
+  description
+  url
+  width
+  height
+}
+
+fragment componentAccordion on ComponentAccordion {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  eyebrow
+  heading
+  variant
+  body {
+    json
+    links {
+      entries {
+        block {
+          ...componentButton
+        }
+      }
+    }
+  }
+  accordionItemsCollection {
+    items {
+      ...componentListItem
+    }
+  }
+}
+
+fragment componentListItem on ComponentListItem {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  symbol
+  title
+  body {
+    json
+  }
+}
+
+fragment componentFeatures on ComponentFeatures {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  background
+  eyebrow
+  heading
+  body {
+    json
+    links {
+      entries {
+        block {
+          sys {
+            id
+          }
+          ...componentButton
+        }
+      }
+    }
+  }
+  imageSide
+  callToAction {
+    ...componentButton
+  }
+  featuresImage {
+    ...componentImage
+  }
+  featureCardsCollection {
+    items {
+      ...componentFeaturesCard
+    }
+  }
+}
+
+fragment componentFeaturesCard on ComponentFeaturesCard {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  icon
+  heading
+  subheading
+}
+
+fragment componentButton on ComponentButton {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  label
+  labelIcon
+  link
+  hierarchy
+  size
+  startIcon
+  endIcon
+  rainbowHover
+}
+
+fragment componentCardDeck on ComponentCardDeck {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  headingComponent {
+    ...componentHeading
+  }
+  headingDirection
+  centerHeadingContent
+  cardsCollection {
+    items {
+      ...componentBasicCard
+    }
+  }
+}
+
+fragment componentCaseStudies on ComponentCaseStudies {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  background
+  headingComponent {
+    ...componentHeading
+  }
+  caseStudyCardsCollection {
+    items {
+      ...componentCaseStudyCard
+    }
+  }
+}
+
+fragment componentCaseStudyCard on ComponentCaseStudyCard {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  caseStudyLinkButton {
+    ...componentButton
+  }
+  caseStudyImage {
+    ...componentImage
+  }
+  caseStudyStats {
+    json
+  }
+  quote {
+    json
+  }
+  person {
+    ...entityPerson
+  }
+}
+
+fragment componentImage on ComponentImage {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  title
+  alternateText
+  bynderImage
+  image {
+    ...asset
+  }
+}
+
+fragment metaSeo on MetaSeo {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  pageTitle
+  pageDescription
+  openGraphImage {
+    ...asset
+  }
+  noIndex
+  noFollow
+}
+
+fragment componentHero on ComponentHero {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  background
+  eyebrow
+  heading
+  reference {
+    ...componentImage
+  }
+  body {
+    json
+    links {
+      entries {
+        block {
+          sys {
+            id
+          }
+          ...componentButton
+          ...componentAccolades
+        }
+      }
+    }
+  }
+}
+
+fragment componentHeading on ComponentHeading {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  eyebrow
+  background
+  heading
+  body {
+    json
+    links {
+      entries {
+        block {
+          sys {
+            id
+          }
+          ...componentButton
+          ...componentInputField
+        }
+      }
+    }
+  }
+}
+
+fragment componentOffsetGrid on ComponentOffsetGrid {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  eyebrow
+  heading
+  reference {
+    ...componentImage
+  }
+  offsetGridCardsCollection {
+    items {
+      ...componentOffsetGridCard
+    }
+  }
+}
+
+fragment componentOffsetGridCard on ComponentOffsetGridCard {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  heading
+  subheading
+  link
+}
+
+fragment componentConversionPanel on ComponentConversionPanel {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  contained
+  background
+  rainbowLine
+  containedBackground
+  eyebrow
+  heading
+  reference {
+    ...componentImage
+  }
+  body {
+    json
+    links {
+      entries {
+        block {
+          sys {
+            id
+          }
+          ...componentButton
+          ...componentInputField
+        }
+      }
+    }
+  }
+}
+
+fragment templatePageMetaData on TemplatePage {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  slug
+  footerStyle
+  headerStyle
+  productNavigation {
+    ...componentHeader
+  }
+  seoMetadata {
+    ...metaSeo
+  }
+}
+
+fragment templatePageComponents1 on TemplatePageComponentsItem {
+  ...componentAccordion
+  ...componentHero
+  ...componentHeading
+  ...componentOffsetGrid
+  ...componentConversionPanel
+  ...componentTrustBar
+  ...componentSwitchback
+  ...componentFullWidthSwitchback
+}
+
+fragment templatePageComponents2 on TemplatePageComponentsItem {
+  ...componentFeatures
+  ...componentTestimonials
+  ...componentAccolades
+  ...componentSwitcher
+  ...componentCaseStudies
+  ...componentCardDeck
+  ...componentHeroForm
+}
+
+fragment componentBasicCard on ComponentBasicCard {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  size
+  variant
+  category
+  categoryColor
+  heading
+  body
+  link
+  longHeading
+  date
+  media {
+    ...asset
+  }
+  mediaReference {
+    ...componentImage
+    ...componentVideo
+  }
+}
+
+fragment componentList on ComponentList {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  listItemsCollection {
+    items {
+      ...componentListItem
+    }
+  }
+}
+
+fragment componentTrustBar on ComponentTrustBar {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  background
+  variant
+  heading
+  companyCollection {
+    items {
+      ...entityCompany
+    }
+  }
+}
+
+fragment componentSwitchback on ComponentSwitchback {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  eyebrow
+  heading
+  assetSide
+  reference {
+    ...componentImage
+  }
+  body {
+    json
+    links {
+      entries {
+        block {
+          ...componentButton
+        }
+      }
+      assets {
+        block {
+          ...asset
+        }
+      }
+    }
+  }
+}
+
+fragment componentFullWidthSwitchback on ComponentFullWidthSwitchback {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  eyebrow
+  heading
+  assetSide
+  reference {
+    ...componentImage
+  }
+  body {
+    json
+    links {
+      entries {
+        block {
+          ...componentButton
+        }
+      }
+      assets {
+        block {
+          ...asset
+        }
+      }
+    }
+  }
+}
+
+fragment componentSwitcher on ComponentSwitcher {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  background
+  headingComponent {
+    ...componentHeading
+  }
+  switcherItemsCollection(limit: 5) {
+    items {
+      ...componentSwitcherItem
+    }
+  }
+}
+
+fragment componentSwitcherItem on ComponentSwitcherItem {
+  internalName
+  __typename
+  sys {
+    id
+  }
+  switcherItemTitle
+  heading
+  subheading
+  switcherItemList {
+    ...componentList
+  }
+  primaryButton {
+    ...componentButton
+  }
+  secondaryButton {
+    ...componentButton
+  }
+  switcherItemImage {
+    ...componentImage
+  }
+}
+
+fragment entityCompany on EntityCompany {
+  sys {
+    id
+  }
+  name
+  companyLogoLight {
+    ...componentImage
+  }
+  companyLogoDark {
+    ...componentImage
+  }
+}
+
+fragment entityPerson on EntityPerson {
+  sys {
+    id
+  }
+  fullName
+  role
+  company {
+    ...entityCompany
+  }
+}
+
+fragment componentAccolades on ComponentAccolades {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  heading
+  eyebrow
+   body {
+    json
+    links {
+      entries {
+        block {
+          ...componentButton
+        }
+      }
+    }
+  }
+  accoladesImageCollection {
+    items {
+      ...componentImage
+    }
+  }
+}
+
+fragment componentInputField on ComponentInputField {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  inputField {
+    ...formInputField
+  }
+  submitButton {
+    ...componentButton
+  }
+}
+
+fragment componentTestimonialCard on ComponentTestimonialCard {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  fullStoryUrl
+  background
+  quote {
+    json
+  }
+  person {
+    ...entityPerson
+  }
+  image {
+    ...componentImage
+  }
+}
+
+fragment componentTestimonials on ComponentTestimonials {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  contained
+  background
+  headingComponent {
+    ...componentHeading
+  }
+  testimonialCardsCollection {
+    items {
+      ...componentTestimonialCard
+    }
+  }
+}
+
+fragment menuItem on MenuItem {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  label
+  description
+  link
+  image {
+    ...componentImage
+  }
+  button {
+    ...componentButton
+  }
+  blogFormat
+  menuCollection {
+    items {
+      sys {
+        id
+      }
+      __typename
+      internalName
+      label
+      description
+      link
+      image {
+        ...componentImage
+      }
+      button {
+        ...componentButton
+      }
+      blogFormat
+      menuCollection {
+        items {
+          sys {
+            id
+          }
+          __typename
+          internalName
+          label
+          description
+          link
+          blogFormat
+          image {
+            ...componentImage
+          }
+          button {
+            ...componentButton
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment componentHeader on ComponentHeader {
+  sys {
+    id
+    spaceId
+    environmentId
+  }
+  internalName
+  __typename
+  contentfulMetadata {
+    __typename
+    tags {
+      id
+      name
+    }
+  }
+  callToAction {
+    ...componentButton
+  }
+  freshworksProduct
+  callToActionMobile {
+    ...componentButton
+  }
+  navigationLinksCollection {
+    items {
+      ...menuItem
+    }
+  }
+  navigationLinksMobileCollection {
+    items {
+      ...menuItem
+    }
+  }
+}
+
+fragment componentFooter on ComponentFooter {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  contactNumber
+  contactEmail
+  googlePlayUrl
+  appStoreUrl
+  legalText
+  announcementCard {
+    ...menuItem
+  }
+  menuItemsCollection {
+    items {
+      ...menuItem
+    }
+  }
+  privacyTermsMenuCollection {
+    items {
+      ...menuItem
+    }
+  }
+  company {
+    ...entityCompany
+  }
+}
+
+fragment formInputField on FormInputField {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  type
+  label
+  placeholder
+  helperText
+  startIcon
+  endIcon
+  toolTipTitle
+  disabled
+  toolTipDescription
+  identification
+  valueOfField
+}
+
+fragment componentVideo on ComponentVideo {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  bynderVideoAsset
+  videoLength
+  heading
+  subheading
+  ctaButton {
+    ...componentButton
+  }
+}
+
+fragment componentSignUpForm on ComponentSignUpForm {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  heading
+  termsOfService
+  privacyNotice
+  dataCenterList
+  pageRedirection
+  firstName {
+    ...formInputField
+  }
+  lastName {
+    ...formInputField
+  }
+  company {
+    ...formInputField
+  }
+  phoneNumber {
+    ...formInputField
+  }
+  email {
+    ...formInputField
+  }
+  hiddenFormsCollection {
+    items {
+      ...formInputField
+    }
+  }
+}
+
+fragment componentHeroForm on ComponentHeroForm {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  contentBackground
+  eyebrow
+  heading
+  subheading
+  heroFeatureList {
+    ...componentList
+  }
+  mediaReference {
+    ...componentImage
+    ...componentTestimonialCard
+    ...componentAccolades
+    ...componentVideo
+  }
+  form {
+    ...componentSignUpForm
+  }
+  trustbar {
+    ...componentTrustBar
+  }
+}
+
+fragment componentGenericForm on ComponentGenericForm {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  heading
+  subheading
+  bodyTextLabel
+  callToAction {
+    ...componentButton
+  }
+  dataCenterList
+  hiddenFormsCollection {
+    items {
+      ...formInputField
+    }
+  }
+  formsCollection {
+    items {
+      ...formInputField
+      ...formDropdownField
+    }
+  }
+  termsOfServicePage
+}
+
+fragment formDropdownField on FormDropdownField {
+  sys {
+    id
+  }
+  __typename
+  internalName
+  label
+  placeholder
+  options
+}

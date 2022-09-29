@@ -1,0 +1,33 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentVideo from 'components/Video/ComponentVideo';
+import * as stories from 'components/Video/storybook/ComponentVideo.stories.tsx';
+
+<Meta
+  title="Components/Component Video"
+  component={ComponentVideo}
+  argTypes={{
+    subheading: {
+      control: { type: 'text' },
+      description: 'Copy for the subheading',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the heading',
+    },
+  }}
+/>
+
+# Component Video
+
+The Component Video is reliant on Bynder to grab the video source. This video will only be used inside the Hero
+Component or the Basic Card component. For now, the Component Video is reliant on the HTML Video element and contains
+limited functionality.
+
+<Canvas>
+  <Story name="Component Video" story={stories.componentVideo} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Component Video" />

@@ -1,0 +1,37 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentHero from 'components/Hero/Hero';
+import * as stories from 'components/Hero/storybook/Hero.stories.tsx';
+
+<Meta
+  title="Components/Hero"
+  component={ComponentHero}
+  argTypes={{
+    background: {
+      control: { type: 'select' },
+      options: ['White', 'Light Pattern', 'Dark Pattern', 'Blue Split', 'Dark Split'],
+    },
+    eyebrow: {
+      control: { type: 'text' },
+      description: 'Copy for the eyebrow',
+    },
+    heading: {
+      control: { type: 'text' },
+      description: 'Copy for the headings',
+    },
+  }}
+/>
+
+# Hero Component
+
+The Hero is the first thing users see when arriving on a freshworks website.
+
+The Hero gives a `heading`, rich text body, `eyebrow` and an asset. The asset is either an image or video.
+
+<Canvas>
+  <Story name="Hero" story={stories.componentHero} />
+</Canvas>
+
+### Props
+
+<ArgsTable story="Hero" />

@@ -1,0 +1,96 @@
+import { ArgsTable, Canvas, Meta, Story } from '@storybook/addon-docs';
+
+import ComponentButton from 'components/Button/ComponentButton';
+import * as stories from 'components/Button/storybook/ComponentButton.stories.tsx';
+
+import { buttonIcons } from 'utils/storyUtils.stories.tsx';
+
+<Meta
+  title="Components/Component Button"
+  component={ComponentButton}
+  argTypes={{
+    startIcon: {
+      options: buttonIcons,
+      control: { type: 'select' },
+      description:
+        'Adds in a Start Icon based off unicode value from Contentful. Additional Icon available upon request.',
+    },
+    endIcon: {
+      options: buttonIcons,
+      control: { type: 'select' },
+      description:
+        'Adds in a End Icon based off unicode value from Contentful. Additional Icon available upon request.',
+    },
+    labelIcon: {
+      options: buttonIcons,
+      control: { type: 'select' },
+      description: 'Value is used for icon-only buttons. Additional Icon available upon request.',
+    },
+    hierarchy: {
+      options: ['Primary Color', 'Secondary Color', 'Tertiary Color', 'Tertiary Gray', 'Link Color', 'Link Gray'],
+      control: { type: 'radio' },
+      description: 'Brings in Button hierarchy from Contentful and generates Color and Variant options.',
+    },
+    disabled: { control: { type: 'boolean' }, description: 'Field to note whether button is disabled or not.' },
+    size: {
+      options: ['xxlarge', 'xlarge', 'large', 'medium', 'small'],
+      control: { type: 'radio' },
+      description: 'Changes button size.',
+    },
+  }}
+/>
+
+# Button Component
+
+Button wrapper to ingest Contentful data into the existing Button molecule.
+
+## Link
+
+The link field is intended to be uniform across the board. For that reason, note: the link needs to be a full URL. ie:
+`https://www.freshworks.com`
+
+## Label Icon
+
+If provided, the this field will override the label and render an icon only button.
+
+## Start Icon
+
+If provided, the this field will import an icon at the start of the button and will increase its length.
+
+## End Icon
+
+If provided, the this field will import an icon at the end of the button and will increase its length.
+
+If Chevron Right is selected, on hover or focus, the button will have a transformation animation.
+
+## Hierarchy
+
+The hierarchy determines a button's priority level and determines its colors and variants. Buttons will automatically
+adjust the color if it exists inside a dark background.
+
+#### Contained
+
+Contained buttons are high-emphasis, distinguished by their use of elevation and fill. They contain actions that are
+primary to your app.
+
+#### Outlined
+
+Outlined buttons are used for more emphasis than Link buttons due to the stroke. Should be used in singular instances
+within components.
+
+#### Link
+
+Used primarily in conjunction with a Contained button, however, when used alone, the button does not contain left
+padding. This allows for additional flexible usage inside components.
+
+## Size
+
+Increasing the size will affect the Buttons' vertical padding, font size, and slightly increases line height.
+
+## Props
+
+<Canvas>
+  <Story name="Component Button" story={stories.componentButton} />
+</Canvas>
+
+<ArgsTable story="Component Button" />
